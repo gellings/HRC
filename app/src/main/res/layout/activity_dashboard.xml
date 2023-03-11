@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This software is subject to the license described in the License.txt file
+  ~ included with this software distribution. You may not use this file except in compliance
+  ~ with this license.
+  ~
+  ~ Copyright (c) Garmin Canada Inc. 2019
+  ~ All rights reserved.
+  -->
+
+<!--<!DOCTYPE AndroidXML>-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="16dp" >
+
+        <TextView
+            android:id="@+id/trainer_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="85dp"
+            android:text="  Power"/>
+
+        <TextView
+            android:id="@+id/trainer_device"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text=""
+            android:layout_toRightOf="@+id/trainer_title"/>
+
+        <TextView
+            android:id="@+id/heart_rate_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Heart Rate"
+            android:layout_marginLeft="105dp"
+            android:layout_toRightOf="@+id/trainer_title" />
+
+        <TextView
+            android:id="@+id/hr_device"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text=""
+            android:layout_toRightOf="@+id/heart_rate_title"/>
+
+        <NumberPicker
+            android:id="@+id/powerPicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/trainer_title"
+            android:layout_alignLeft="@+id/trainer_title"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp" />
+
+        <NumberPicker
+            android:id="@+id/hrPicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/heart_rate_title"
+            android:layout_alignLeft="@+id/heart_rate_title"/>
+
+        <TextView
+            android:id="@+id/targets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Target:"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/powerPicker"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Max:"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/hrPicker"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/command"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/powerPicker"
+            android:layout_alignRight="@+id/targets"
+
+            android:text="Actual:" />
+
+        <TextView
+            android:id="@+id/powerValueView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/power_value"
+            android:layout_marginLeft="20dp"
+            android:layout_alignLeft="@+id/powerPicker"
+            android:layout_below="@+id/powerPicker"/>
+
+        <TextView
+            android:id="@+id/current"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current:"
+            android:layout_alignRight="@+id/max"
+            android:layout_below="@+id/hrPicker"/>
+
+        <TextView
+            android:id="@+id/heartRateValueView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/heart_rate_value"
+            android:layout_marginLeft="20dp"
+            android:layout_alignLeft="@+id/hrPicker"
+            android:layout_below="@+id/hrPicker"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button_StartMultiDeviceSearch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Device Search"
+        android:textAppearance="@android:style/TextAppearance.Medium" />
+
+    <TextView
+        android:id="@+id/textView_FoundDeviceTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Found Devices:"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textStyle="bold" />
+
+    <ListView
+        android:id="@+id/listView_AlreadyConnectedDevices"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+    <ListView
+        android:id="@+id/listView_FoundDevices"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+
+
+<!--    <ListView android:layout_height="wrap_content"-->
+<!--        android:id="@android:id/list"-->
+<!--        android:layout_width="fill_parent"-->
+<!--        android:layout_weight="1.0"-->
+<!--        android:layout_marginTop="5dp"/>-->
+
+    <TextView
+        android:id="@+id/textView_PluginSamplerVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="App Version:" />
+
+    <TextView
+        android:id="@+id/textView_PluginLibVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Built w/ PluginLib:" />
+
+    <TextView
+        android:id="@+id/textView_PluginsPkgVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Installed Plugin Version:" />
+
+</LinearLayout>
